@@ -7,7 +7,7 @@ bac_diff = @(x, h) (f(x) - f(x-h)) / h;
 for_diff_3 = @(x,h) (-3*f(x)+4*f(x+h)-f(x+2*h))/(2*h);
 
 x = 0:0.1:2*pi;
-h = 0.1;
+h = 0.5;
 dfdx_f = for_diff(x, h); % "Implicit expansion"
 dfdx_c = cen_diff(x, h);
 dfdx_b = bac_diff(x, h);

@@ -1,14 +1,21 @@
-%f = @(x) sin(x);
-%dfdx = @(x) cos(x);
-f = @(x) 3*x^3 + x^2 - x + 1;
-dfdx = @(x) 9*x^2 + 2*x - 1;
+% Compare the slopes of the errors on a log-log
+% scale.  
+
+f = @(x) sin(x);
+dfdx = @(x) cos(x);
+
+%f = @(x) 3*x^3 + x^2 - x + 1;
+%dfdx = @(x) 9*x^2 + 2*x - 1;
+
+%f = @(x) exp(x^2);
+%dfdx = @(x) 2*x*exp(x^2);
 
 cen_df = @(x, h) (f(x+h) - f(x-h)) / (2*h);
 for_df = @(x, h) (f(x+h) - f(x))   / h;
 bac_df = @(x, h) (f(x) - f(x-h))   / h;
 
 %x0 = pi / 4;
-x0 = 5.0;
+x0 = 1.0;
 
 h_values = logspace(-10, -1, 10);
 
