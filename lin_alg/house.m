@@ -22,5 +22,5 @@ function [W,R] = house(A)
 
         A(k:m,k:n) -= 2*vk*vk'*A(k:m,k:n);
     end%for
-    R = A;
+    R = A(1:n,1:n);
 end%function
