@@ -1,6 +1,7 @@
 % Exercise 11.2.  Fitting some nonlinear functions lienarly.  
 % Get coefficents by solving least squares with QR decomposition.  
 v = 1:0.01:2;
+%v = 0.0001:0.0001:1;
 v = v';
 
 A = [exp(v), sin(v), gamma(v)];
