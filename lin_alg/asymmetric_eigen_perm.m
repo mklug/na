@@ -16,7 +16,7 @@ eig(S) - eig(S+dS+dS')
 eigenvalues = [1e7, 1e5, 1e3, 1e-3, 1e-5];
 D = diag(eigenvalues);
 
-B = A*D*A^-1; % Symmetric.
+B = A*D*A^-1;
 cond(B)
 
 eig(B) - eig(B+dS+dS')
