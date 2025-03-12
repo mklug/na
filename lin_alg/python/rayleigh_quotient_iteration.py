@@ -1,9 +1,11 @@
 # Rayleigh quotient iteration using numpy.
 import numpy as np
 
-def rayleigh_quotient_iteration(A, num_iterations):
+def rayleigh_quotient_iteration(A, num_iterations, v0 = None):
     m = A.shape[1]
-    v0 = np.random.rand(m)
+    if v0 is None:
+        v0 = np.random.rand(m)
+
     v0 /= np.linalg.norm(v0)
     lmbda = np.dot(v0.T, np.dot(A, v0))
     for _ in range(num_iterations):
